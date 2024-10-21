@@ -17,11 +17,11 @@ FROM python:3.10.6-slim
 ENV PYTHONUNBUFFERED 1
 
 # Create and change to the app directory.
-WORKDIR /usr/src/app
+WORKDIR /
 
 # Copy application dependency manifests to the container image.
 # Copying this separately prevents re-running pip install on every code change.
-COPY requirements.txt ./
+COPY requirements.txt
 
 # Install dependencies.
 RUN pip install -r requirements.txt
